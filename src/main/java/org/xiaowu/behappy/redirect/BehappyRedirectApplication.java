@@ -30,7 +30,7 @@ public class BehappyRedirectApplication {
     @Value("${server.port:8080}")
     private String port;
 
-    @GetMapping
+    @RequestMapping
     public RedirectView redirect(@RequestParam(required = false) Map<String, Object> params) {
         if (!StringUtils.hasLength(redirectUrl)){
             redirectUrl = "http://127.0.0.1:%s/test-callback".formatted(port);
