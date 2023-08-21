@@ -1,5 +1,5 @@
 # behappy-redirect
-流量转发工具
+重定向工具
 
 # 使用方式
 
