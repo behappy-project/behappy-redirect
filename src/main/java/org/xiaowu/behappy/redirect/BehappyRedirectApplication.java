@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
@@ -30,7 +29,7 @@ public class BehappyRedirectApplication {
     @Value("${server.port:8080}")
     private String port;
 
-    @RequestMapping
+    @RequestMapping("/**")
     public RedirectView redirect(@RequestParam(required = false) Map<String, Object> params) {
         if (!StringUtils.hasLength(redirectUrl)){
             redirectUrl = "http://127.0.0.1:%s/test-callback".formatted(port);
